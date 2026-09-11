@@ -1,7 +1,17 @@
 
 e = input().strip()
-s = next(i for i in range(len(e)) if e[i].isupper())
-d = next(i for i in range(s + 1, len(e)) if e[i].isdigit())
+s = 0
+for i in range(len(e)):
+    if e[i].isupper():
+        s = i
+        break
+
+d = 0
+for i in range(s + 1, len(e)):
+    if e[i].isdigit():
+        d = i
+        break
+
 k = d - s + 1
 
 z = []
